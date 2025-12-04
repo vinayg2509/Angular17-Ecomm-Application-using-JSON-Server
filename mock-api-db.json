@@ -68,8 +68,8 @@
       "dob": "1994-10-15",
       "email": "pavan@example.com",
       "password": "pavan123",
-      "addLine1": "Gandhi Nagar",
-      "addLine2": "Near Railway Station",
+      "addressLine1": "Gandhi Nagar",
+      "addressLine2": "Near Railway Station",
       "city": "Bellary",
       "state": "Karnataka",
       "zipCode": "583101",
@@ -79,9 +79,8 @@
       "uploadPhoto": "pavan.jpg",
       "role": "seller",
       "agreetc": true
-    }
+    } 
   ],
-
   "products": [
     {
       "id": 1,
@@ -244,7 +243,6 @@
       "contact": "9845009876",
       "dateTime": "2025-01-12T10:20:00"
     },
-
     {
       "id": 2,
       "userId": 3,
@@ -269,7 +267,6 @@
       "contact": "9845009876",
       "dateTime": "2025-02-05T14:45:00"
     },
-
     {
       "id": 3,
       "userId": 3,
@@ -294,7 +291,6 @@
       "contact": "9845009876",
       "dateTime": "2025-03-18T18:30:00"
     },
-
     {
       "id": 4,
       "userId": 3,
@@ -319,7 +315,6 @@
       "contact": "9845009876",
       "dateTime": "2025-04-02T09:15:00"
     },
-
     {
       "id": 5,
       "userId": 3,
