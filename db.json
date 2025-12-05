@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "Users": [
     {
       "id": 1,
       "title": "json-server",

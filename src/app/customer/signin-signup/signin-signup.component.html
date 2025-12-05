@@ -1,1 +1,197 @@
-<p>signin-signup works!</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      
+      <!-- ========================= SIGN-UP FORM ========================= -->
+      <div class="col-md-6 offset-md-3" *ngIf="regForm">
+        <h3>Registration Form</h3>
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmitSignUpForm()">
+
+          <!-- Name -->
+          <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" type="text" formControlName="name" />
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <input class="form-control" type="tel" formControlName="mobNumber" />
+          </div>
+
+          <!-- Age -->
+          <div class="form-group">
+            <label>Age</label>
+            <input class="form-control" type="text" formControlName="age" />
+          </div>
+
+          <!-- DOB -->
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input class="form-control" type="date" formControlName="dob" />
+          </div>
+
+          <!-- Email + Password -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email</label>
+              <input class="form-control" type="email" formControlName="email" />
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Password</label>
+              <input
+                class="form-control"
+                type="password"
+                formControlName="password"
+              />
+            </div>
+          </div>
+
+          <!-- Address Line 1 + 2 -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Address Line 1</label>
+              <input class="form-control" type="text" formControlName="addressLine1" />
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Address Line 2</label>
+              <input class="form-control" type="text" formControlName="addressLine2" />
+            </div>
+          </div>
+
+          <!-- City / State / ZIP -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>City</label>
+              <input class="form-control" type="text" formControlName="city" />
+            </div>
+
+            <div class="form-group col-md-4">
+              <label>State</label>
+              <select class="form-control" formControlName="state">
+                <option value="" disabled selected>Select State</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+                <option>Maharashtra</option>
+                <option>Kerala</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label>Zip Code</label>
+              <input class="form-control" type="text" formControlName="zipCode" />
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="form-group">
+            <label>Language</label>
+            <select class="form-control" multiple formControlName="language">
+              <option value="kannada">Kannada</option>
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="telugu">Telugu</option>
+              <option value="tamil">Tamil</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Gender -->
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="gender" value="male" />
+              <label class="form-check-label">Male</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="gender" value="female" />
+              <label class="form-check-label">Female</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="gender" value="others" />
+              <label class="form-check-label">Others</label>
+            </div>
+          </div>
+
+          <!-- Something About You -->
+          <div class="form-group">
+            <label>Something About You</label>
+            <textarea class="form-control" rows="3" formControlName="aboutYou"></textarea>
+          </div>
+
+          <!-- Upload Photo -->
+          <div class="form-group">
+            <label>Upload Your Photo</label>
+            <input class="form-control" type="file" formControlName="uploadPhoto" />
+          </div>
+
+          <!-- Role -->
+          <div class="form-group">
+            <label>What You Want To Do</label>
+            <select class="form-control" formControlName="role">
+              <option value="seller">Seller</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>
+
+          <!-- Agree Terms -->
+          <div class="form-group">
+            <input class="form-check-input" type="checkbox" formControlName="agreetc" />
+            <label class="form-check-label">Agree T & C</label>
+          </div>
+
+          <!-- Register -->
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+        </form>
+
+        <a routerLink="/sign-in">Already have an account? Click here to Sign In</a>
+      </div>
+
+      <!-- ========================= LOGIN FORM ========================= -->
+      <div class="col-md-6 offset-md-3" *ngIf="!regForm">
+        <h3>Login Form</h3>
+
+        <form name="form" #tf="ngForm" (ngSubmit)="tf.form.valid && onSubmitSignIn()" novalidate>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              name="email" 
+              [(ngModel)]="signInFormValue.email" 
+              #email="ngModel" 
+              required 
+              email />
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              name="password" 
+              [(ngModel)]="signInFormValue.password" 
+              #password="ngModel" 
+              minlength="6" 
+              required />
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
+
+        <a routerLink="/sign-up">Don't have an account? Click here to Register</a>
+      </div>
+
+    </div>
+  </div>
+</div>

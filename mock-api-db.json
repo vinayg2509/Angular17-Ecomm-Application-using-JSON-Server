@@ -1,0 +1,343 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Vinay",
+      "mobNumber": "9876543210",
+      "age": 25,
+      "dob": "1999-05-12",
+      "email": "vinay@example.com",
+      "password": "vinay123",
+      "addLine1": "1st Cross",
+      "addLine2": "Main Road",
+      "city": "Shivamogga",
+      "state": "Karnataka",
+      "zipCode": "577201",
+      "language": "English",
+      "gender": "Male",
+      "aboutYou": "Software Engineer from Karnataka.",
+      "uploadPhoto": "vinay.jpg",
+      "role": "admin",
+      "agreetc": true
+    },
+    {
+      "id": 2,
+      "name": "Pooja",
+      "mobNumber": "9876501234",
+      "age": 23,
+      "dob": "2001-02-20",
+      "email": "pooja@example.com",
+      "password": "pooja123",
+      "addLine1": "Near Bus Stand",
+      "addLine2": "Temple Street",
+      "city": "Udupi",
+      "state": "Karnataka",
+      "zipCode": "576101",
+      "language": "Hindi",
+      "gender": "Female",
+      "aboutYou": "Interested in arts and design.",
+      "uploadPhoto": "pooja.jpg",
+      "role": "seller",
+      "agreetc": true
+    },
+    {
+      "id": 3,
+      "name": "Yogeesh",
+      "mobNumber": "9845009876",
+      "age": 28,
+      "dob": "1996-07-30",
+      "email": "yogeesh@example.com",
+      "password": "yogee123",
+      "addLine1": "Tech Park Road",
+      "addLine2": "Whitefield",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zipCode": "560066",
+      "language": "Kannada",
+      "gender": "Male",
+      "aboutYou": "Full stack developer.",
+      "uploadPhoto": "yogeesh.jpg",
+      "role": "buyer",
+      "agreetc": true
+    },
+    {
+      "id": 4,
+      "name": "Pavan",
+      "mobNumber": "9845012345",
+      "age": 30,
+      "dob": "1994-10-15",
+      "email": "pavan@example.com",
+      "password": "pavan123",
+      "addressLine1": "Gandhi Nagar",
+      "addressLine2": "Near Railway Station",
+      "city": "Bellary",
+      "state": "Karnataka",
+      "zipCode": "583101",
+      "language": "English",
+      "gender": "Male",
+      "aboutYou": "Business owner and fitness lover.",
+      "uploadPhoto": "pavan.jpg",
+      "role": "seller",
+      "agreetc": true
+    } 
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "HP 15, Intel Core Ultra 5",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/71dyfY6G0aL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "High-performance laptop suitable for gaming and software development.",
+      "mrp": 75000,
+      "dp": 60999,
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S25 Ultra",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/71-d7XDbhIL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Latest generation smartphone with AMOLED display.",
+      "mrp": 145000,
+      "dp": 139999,
+      "status": "Available"
+    },
+    {
+      "id": 3,
+      "name": "boAt Rockerz 480",
+      "uploadPhoto": "headset.jpg",
+      "productDesc": "https://m.media-amazon.com/images/I/711l4y8aNlL._AC_UY327_FMwebp_QL65_.jpg",
+      "mrp": 5999,
+      "dp": 4599,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 4,
+      "name": "Noise Pulse 4",
+      "uploadPhoto": "smartwatch.jpg",
+      "productDesc": "https://m.media-amazon.com/images/I/61Iw0g8zYYL._SX679_.jpg",
+      "mrp": 12999,
+      "dp": 9999,
+      "status": "Available"
+    },
+    {
+      "id": 5,
+      "name": "Apple iPhone 170pro",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/618vU2qKXQL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Apple iPhone 17pro with A19 Bionic chip and advanced dual-camera system.",
+      "mrp": 179999,
+      "dp": 144999,
+      "status": "publish"
+    },
+    {
+      "id": 6,
+      "name": "Samsung Galaxy S23 Ultra",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/51ygk8oviDL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Samsung S23 Ultra with 200MP camera and Snapdragon 8 Gen 2 processor.",
+      "mrp": 124999,
+      "dp": 118999,
+      "status": "draft"
+    },
+    {
+      "id": 7,
+      "name": "Sony WH-1000XM5 Headphone",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/51aXvjzcukL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Industry-leading noise cancellation wireless headphones by Sony.",
+      "mrp": 29999,
+      "dp": 24999,
+      "status": "inactive"
+    },
+    {
+      "id": 8,
+      "name": "Dell Inspiron i5 Laptop",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/611DLBKu8JL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Dell Inspiron 15 with Intel i5 12th Gen, 8GB RAM and 512GB SSD.",
+      "mrp": 58999,
+      "dp": 52999,
+      "status": "publish"
+    },
+    {
+      "id": 9,
+      "name": "boAt Airdopes 141",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/716CRTrQzgL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "boAt wireless earbuds with 42 hours playback and ENx noise cancellation.",
+      "mrp": 2499,
+      "dp": 1499,
+      "status": "draft"
+    },
+    {
+      "id": 10,
+      "name": "Xiaomi Y1S 43-inch Smart TV",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/81O3Otf3bPL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Xiaomi FHD Android Smart TV with 20W Dolby Audio.",
+      "mrp": 27999,
+      "dp": 23999,
+      "status": "publish"
+    },
+    {
+      "id": 11,
+      "name": "Prestige Electric Kettle 1.5L",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/51Q11RNy8dL._SX679_.jpg",
+      "productDesc": "Electric kettle with stainless steel body and auto shut-off.",
+      "mrp": 1999,
+      "dp": 1399,
+      "status": "draft"
+    },
+    {
+      "id": 12,
+      "name": "Philips Hair Dryer 1000W",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/61I2seGaPUL._AC_UL480_FMwebp_QL65_.jpg",
+      "productDesc": "Compact 1000W Philips hair dryer with ThermoProtect setting.",
+      "mrp": 1499,
+      "dp": 999,
+      "status": "inactive"
+    },
+    {
+      "id": 13,
+      "name": "Amazon Echo Dot (5th Gen)",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/81lGxS2ZisL._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "Smart speaker with Alexa, improved bass and LED display.",
+      "mrp": 6499,
+      "dp": 4999,
+      "status": "publish"
+    },
+    {
+      "id": 14,
+      "name": "Redmi Buds 5 Pro",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/61oh4tmrL1L._AC_UY327_FMwebp_QL65_.jpg",
+      "productDesc": "ANC wireless earbuds with Hi-Res audio support.",
+      "mrp": 4999,
+      "dp": 3499,
+      "status": "draft"
+    },
+    {
+      "id": 15,
+      "name": "Noise ColorFit Pro 4 Alpha",
+      "uploadPhoto": "https://m.media-amazon.com/images/I/41691xQPPAL._SY300_SX300_QL70_FMwebp_.jpg",
+      "productDesc": "AMOLED smartwatch with Bluetooth calling and 60 sports modes.",
+      "mrp": 5499,
+      "dp": 3999,
+      "status": "publish"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 2,
+        "name": "Samsung Galaxy S25 Ultra",
+        "uploadPhoto": "https://m.media-amazon.com/images/I/71-d7XDbhIL._AC_UY327_FMwebp_QL65_.jpg",
+        "productDesc": "Latest generation smartphone with AMOLED display.",
+        "mrp": 145000,
+        "dp": 139999,
+        "status": "Available"
+      },
+      "deliveryAddress": {
+        "id": 1,
+        "addLine1": "Tech Park Road",
+        "addLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "contact": "9845009876",
+      "dateTime": "2025-01-12T10:20:00"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "sellerId": 4,
+      "product": {
+        "id": 7,
+        "name": "Sony WH-1000XM5 Headphone",
+        "uploadPhoto": "https://m.media-amazon.com/images/I/51aXvjzcukL._AC_UY327_FMwebp_QL65_.jpg",
+        "productDesc": "Industry-leading noise cancellation wireless headphones by Sony.",
+        "mrp": 29999,
+        "dp": 24999,
+        "status": "inactive"
+      },
+      "deliveryAddress": {
+        "id": 2,
+        "addLine1": "Tech Park Road",
+        "addLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "contact": "9845009876",
+      "dateTime": "2025-02-05T14:45:00"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 9,
+        "name": "boAt Airdopes 141",
+        "uploadPhoto": "https://m.media-amazon.com/images/I/716CRTrQzgL._AC_UY327_FMwebp_QL65_.jpg",
+        "productDesc": "boAt wireless earbuds with 42 hours playback and ENx noise cancellation.",
+        "mrp": 2499,
+        "dp": 1499,
+        "status": "draft"
+      },
+      "deliveryAddress": {
+        "id": 3,
+        "addLine1": "Tech Park Road",
+        "addLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "contact": "9845009876",
+      "dateTime": "2025-03-18T18:30:00"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "sellerId": 4,
+      "product": {
+        "id": 13,
+        "name": "Amazon Echo Dot (5th Gen)",
+        "uploadPhoto": "https://m.media-amazon.com/images/I/81lGxS2ZisL._AC_UY327_FMwebp_QL65_.jpg",
+        "productDesc": "Smart speaker with Alexa, improved bass and LED display.",
+        "mrp": 6499,
+        "dp": 4999,
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 4,
+        "addLine1": "Tech Park Road",
+        "addLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "contact": "9845009876",
+      "dateTime": "2025-04-02T09:15:00"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "sellerId": 2,
+      "product": {
+        "id": 15,
+        "name": "Noise ColorFit Pro 4 Alpha",
+        "uploadPhoto": "https://m.media-amazon.com/images/I/41691xQPPAL._SY300_SX300_QL70_FMwebp_.jpg",
+        "productDesc": "AMOLED smartwatch with Bluetooth calling and 60 sports modes.",
+        "mrp": 5499,
+        "dp": 3999,
+        "status": "publish"
+      },
+      "deliveryAddress": {
+        "id": 5,
+        "addLine1": "Tech Park Road",
+        "addLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "contact": "9845009876",
+      "dateTime": "2025-04-15T11:55:00"
+    }
+  ]
+}
