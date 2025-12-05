@@ -117,6 +117,12 @@ export class SigninSignupComponent {
               sessionStorage.setItem('role',this.user_data[0].role)
               this.router.navigateByUrl('/buyer-dashboard')
             }
+           else if(this.user_data[0].role=='admin')
+            {
+              sessionStorage.setItem('user_session_id',this.user_data[0].id)
+              sessionStorage.setItem('role',this.user_data[0].role)
+              this.router.navigateByUrl('/admin-dashboard')
+            }
             else
             {
               alert('Invalid login details')
