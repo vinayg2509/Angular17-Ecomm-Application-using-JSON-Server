@@ -1,19 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Vinay",
       "mobNumber": "9876543210",
       "age": 25,
       "dob": "1999-05-12",
       "email": "vinay@example.com",
       "password": "vinay123",
-      "addLine1": "1st Cross",
-      "addLine2": "Main Road",
-      "city": "Shivamogga",
-      "state": "Karnataka",
-      "zipCode": "577201",
-      "language": "English",
+      "address": {
+        "addressLine1": "1st Cross",
+        "addressLine2": "Main Road",
+        "city": "Shivamogga",
+        "state": "Karnataka",
+        "zipCode": "577201"
+      },
+      "language": ["English"],
       "gender": "Male",
       "aboutYou": "Software Engineer from Karnataka.",
       "uploadPhoto": "vinay.jpg",
@@ -21,19 +23,21 @@
       "agreetc": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Pooja",
       "mobNumber": "9876501234",
       "age": 23,
       "dob": "2001-02-20",
       "email": "pooja@example.com",
       "password": "pooja123",
-      "addLine1": "Near Bus Stand",
-      "addLine2": "Temple Street",
-      "city": "Udupi",
-      "state": "Karnataka",
-      "zipCode": "576101",
-      "language": "Hindi",
+      "address": {
+        "addressLine1": "Near Bus Stand",
+        "addressLine2": "Temple Street",
+        "city": "Udupi",
+        "state": "Karnataka",
+        "zipCode": "576101"
+      },
+      "language": ["Hindi"],
       "gender": "Female",
       "aboutYou": "Interested in arts and design.",
       "uploadPhoto": "pooja.jpg",
@@ -41,19 +45,21 @@
       "agreetc": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Yogeesh",
       "mobNumber": "9845009876",
       "age": 28,
       "dob": "1996-07-30",
       "email": "yogeesh@example.com",
       "password": "yogee123",
-      "addLine1": "Tech Park Road",
-      "addLine2": "Whitefield",
-      "city": "Bangalore",
-      "state": "Karnataka",
-      "zipCode": "560066",
-      "language": "Kannada",
+      "address": {
+        "addressLine1": "Tech Park Road",
+        "addressLine2": "Whitefield",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "language": ["Kannada"],
       "gender": "Male",
       "aboutYou": "Full stack developer.",
       "uploadPhoto": "yogeesh.jpg",
@@ -61,29 +67,75 @@
       "agreetc": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Pavan",
       "mobNumber": "9845012345",
       "age": 30,
       "dob": "1994-10-15",
       "email": "pavan@example.com",
       "password": "pavan123",
-      "addressLine1": "Gandhi Nagar",
-      "addressLine2": "Near Railway Station",
-      "city": "Bellary",
-      "state": "Karnataka",
-      "zipCode": "583101",
-      "language": "English",
+      "address": {
+        "addressLine1": "Gandhi Nagar",
+        "addressLine2": "Near Railway Station",
+        "city": "Bellary",
+        "state": "Karnataka",
+        "zipCode": "583101"
+      },
+      "language": ["English"],
       "gender": "Male",
       "aboutYou": "Business owner and fitness lover.",
       "uploadPhoto": "pavan.jpg",
       "role": "seller",
       "agreetc": true
-    } 
+    },
+    {
+      "id": "5",
+      "name": "Deepika",
+      "mobNumber": "89876543321",
+      "age": 24,
+      "dob": "2002-11-23",
+      "email": "deepika@gmail.com",
+      "password": "deepika123",
+      "address": {
+        "addressLine1": "#4 3rd cross",
+        "addressLine2": "MG Road",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560038"
+      },
+      "language": ["English", "Hindi", "Telugu"],
+      "gender": "Female",
+      "aboutYou": "UI/UX designer and creative enthusiast",
+      "uploadPhoto": "deepika.png",
+      "role": "buyer",
+      "agreetc": true
+    },
+    {
+      "id": "6",
+      "name": "Bhavana",
+      "mobNumber": "9076767521",
+      "age": 26,
+      "dob": "1999-06-26",
+      "email": "bhavana@gmail.com",
+      "password": "bhavana123",
+      "address": {
+        "addressLine1": "#69 JP Nagar 8th phase",
+        "addressLine2": "GR Hills",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560083"
+      },
+      "language": ["Kannada", "English", "Hindi"],
+      "gender": "Female",
+      "aboutYou": "PCB Designer",
+      "uploadPhoto": "bhavana.png",
+      "role": "seller",
+      "agreetc": true
+    }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "HP 15, Intel Core Ultra 5",
       "uploadPhoto": "https://m.media-amazon.com/images/I/71dyfY6G0aL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "High-performance laptop suitable for gaming and software development.",
@@ -92,7 +144,7 @@
       "status": "Available"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Samsung Galaxy S25 Ultra",
       "uploadPhoto": "https://m.media-amazon.com/images/I/71-d7XDbhIL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Latest generation smartphone with AMOLED display.",
@@ -101,7 +153,7 @@
       "status": "Available"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "boAt Rockerz 480",
       "uploadPhoto": "headset.jpg",
       "productDesc": "https://m.media-amazon.com/images/I/711l4y8aNlL._AC_UY327_FMwebp_QL65_.jpg",
@@ -110,7 +162,7 @@
       "status": "Out of Stock"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Noise Pulse 4",
       "uploadPhoto": "smartwatch.jpg",
       "productDesc": "https://m.media-amazon.com/images/I/61Iw0g8zYYL._SX679_.jpg",
@@ -119,7 +171,7 @@
       "status": "Available"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Apple iPhone 170pro",
       "uploadPhoto": "https://m.media-amazon.com/images/I/618vU2qKXQL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Apple iPhone 17pro with A19 Bionic chip and advanced dual-camera system.",
@@ -128,7 +180,7 @@
       "status": "publish"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Samsung Galaxy S23 Ultra",
       "uploadPhoto": "https://m.media-amazon.com/images/I/51ygk8oviDL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Samsung S23 Ultra with 200MP camera and Snapdragon 8 Gen 2 processor.",
@@ -137,7 +189,7 @@
       "status": "draft"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Sony WH-1000XM5 Headphone",
       "uploadPhoto": "https://m.media-amazon.com/images/I/51aXvjzcukL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Industry-leading noise cancellation wireless headphones by Sony.",
@@ -146,7 +198,7 @@
       "status": "inactive"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Dell Inspiron i5 Laptop",
       "uploadPhoto": "https://m.media-amazon.com/images/I/611DLBKu8JL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Dell Inspiron 15 with Intel i5 12th Gen, 8GB RAM and 512GB SSD.",
@@ -155,7 +207,7 @@
       "status": "publish"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "boAt Airdopes 141",
       "uploadPhoto": "https://m.media-amazon.com/images/I/716CRTrQzgL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "boAt wireless earbuds with 42 hours playback and ENx noise cancellation.",
@@ -164,7 +216,7 @@
       "status": "draft"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Xiaomi Y1S 43-inch Smart TV",
       "uploadPhoto": "https://m.media-amazon.com/images/I/81O3Otf3bPL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Xiaomi FHD Android Smart TV with 20W Dolby Audio.",
@@ -173,7 +225,7 @@
       "status": "publish"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Prestige Electric Kettle 1.5L",
       "uploadPhoto": "https://m.media-amazon.com/images/I/51Q11RNy8dL._SX679_.jpg",
       "productDesc": "Electric kettle with stainless steel body and auto shut-off.",
@@ -182,7 +234,7 @@
       "status": "draft"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Philips Hair Dryer 1000W",
       "uploadPhoto": "https://m.media-amazon.com/images/I/61I2seGaPUL._AC_UL480_FMwebp_QL65_.jpg",
       "productDesc": "Compact 1000W Philips hair dryer with ThermoProtect setting.",
@@ -191,7 +243,7 @@
       "status": "inactive"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Amazon Echo Dot (5th Gen)",
       "uploadPhoto": "https://m.media-amazon.com/images/I/81lGxS2ZisL._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "Smart speaker with Alexa, improved bass and LED display.",
@@ -200,7 +252,7 @@
       "status": "publish"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Redmi Buds 5 Pro",
       "uploadPhoto": "https://m.media-amazon.com/images/I/61oh4tmrL1L._AC_UY327_FMwebp_QL65_.jpg",
       "productDesc": "ANC wireless earbuds with Hi-Res audio support.",
@@ -209,7 +261,7 @@
       "status": "draft"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Noise ColorFit Pro 4 Alpha",
       "uploadPhoto": "https://m.media-amazon.com/images/I/41691xQPPAL._SY300_SX300_QL70_FMwebp_.jpg",
       "productDesc": "AMOLED smartwatch with Bluetooth calling and 60 sports modes.",
@@ -220,7 +272,7 @@
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 3,
       "sellerId": 2,
       "product": {
@@ -244,7 +296,7 @@
       "dateTime": "2025-01-12T10:20:00"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 3,
       "sellerId": 4,
       "product": {
@@ -268,7 +320,7 @@
       "dateTime": "2025-02-05T14:45:00"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 3,
       "sellerId": 2,
       "product": {
@@ -292,7 +344,7 @@
       "dateTime": "2025-03-18T18:30:00"
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 3,
       "sellerId": 4,
       "product": {
@@ -316,7 +368,7 @@
       "dateTime": "2025-04-02T09:15:00"
     },
     {
-      "id": 5,
+      "id": "5",
       "userId": 3,
       "sellerId": 2,
       "product": {

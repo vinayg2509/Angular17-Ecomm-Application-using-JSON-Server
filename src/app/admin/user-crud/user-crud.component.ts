@@ -10,7 +10,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../services/admin.service';
-declare var JQuery: any;
+
+declare var $: any;
+
 @Component({
   selector: 'app-user-crud',
   standalone: true,
@@ -19,19 +21,16 @@ declare var JQuery: any;
   styleUrl: './user-crud.component.scss',
 })
 export class UserCrudComponent implements OnInit {
-  all_user_data: any;
+  all_user_data: any[] = [];
   single_user_data: any;
   addEditUserForm!: FormGroup;
-  user_details: any;
-  user_reg_data: any;
-  edit_user_data: any;
-  edit_user_id:any;
-  upload_file_name!: string;
-  addEdituser: boolean = false;
-  edit_user: boolean = false;
-  add_user: boolean = false;
-  popup_header: any;
-  signInFormValue: any = {};
+
+  edit_user_id: number | null = null;
+  upload_file_name: string = '';
+
+  edit_user = false;
+  add_user = false;
+  popup_header = '';
 
   constructor(
     private router: Router,
@@ -41,179 +40,166 @@ export class UserCrudComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUser();
+
     this.addEditUserForm = this.formBuilder.group({
       name: ['', Validators.required],
       mobNumber: ['', Validators.required],
       age: ['', Validators.required],
       dob: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+
       addressLine1: ['', Validators.required],
-      addressLine2: ['', Validators.required],
+      addressLine2: [''],
       city: ['', Validators.required],
       state: ['', Validators.required],
       zipCode: ['', Validators.required],
+
       language: ['', Validators.required],
       gender: ['', Validators.required],
-      aboutYou: ['', Validators.required],
-      uploadPhoto: ['', Validators.required],
+      aboutYou: [''],
+      uploadPhoto: [''],
       role: ['', Validators.required],
-      agreetc: ['', Validators.required],
+      agreetc: [false, Validators.requiredTrue],
     });
   }
 
   getAllUser() {
-    this.adminService.allUsers().subscribe(
-      (data) => {
-        this.all_user_data = data;
-      },
-      (error) => {
-        console.log('My Error', error);
-      }
-    );
-  }
-  get rf() {
-    return this.addEditUserForm.controls;
+    this.adminService.allUsers().subscribe({
+      next: (data) => (this.all_user_data = data),
+      error: (err) => console.log('Error:', err),
+    });
   }
 
   addUserPop() {
     this.edit_user = false;
     this.add_user = true;
     this.popup_header = 'Add New User';
+    this.edit_user_id = null;
     this.addEditUserForm.reset();
   }
-  addUser() {
-    this.add_user = true;
-    if (this.addEditUserForm.invalid) {
-     alert('Error 😳\n\n' + JSON.stringify(this.addEditUserForm.value));
 
+  addUser() {
+    if (this.addEditUserForm.invalid) {
+      alert('Please fill all required fields');
       return;
     }
-    this.user_reg_data = this.addEditUserForm.value;
-    this.user_details = {
-      name: this.user_reg_data.name,
-      mobNumber: this.user_reg_data.mobNumber,
-      age: this.user_reg_data.age,
-      dob: this.user_reg_data.dob,
-      email: this.user_reg_data.email,
-      password: this.user_reg_data.password,
-      address: {
-        id: 0,
-        addressLine1: this.user_reg_data.addressLine1,
-        addressLine2: this.user_reg_data.addressLine2,
-        city: this.user_reg_data.city,
-        state: this.user_reg_data.state,
-        zipCode: this.user_reg_data.zipCode,
-      },
-      language: this.user_reg_data.language,
-      gender: this.user_reg_data.gender,
-      aboutYou: this.user_reg_data.aboutYou,
-      uploadPhoto: this.user_reg_data.uploadPhoto,
-      role: this.user_reg_data.role,
-      agreetc: this.user_reg_data.agreetc,
-    };
-    this.adminService.addUser(this.user_details).subscribe(
-      (data) => {
-        this.getAllUser();
-       JQuery('#addEdituserModal').modal('toggle');
 
+    const form = this.addEditUserForm.value;
+
+    const payload = {
+      name: form.name,
+      mobNumber: form.mobNumber,
+      age: form.age,
+      dob: form.dob,
+      email: form.email,
+      password: form.password,
+      address: {
+        addressLine1: form.addressLine1,
+        addressLine2: form.addressLine2,
+        city: form.city,
+        state: form.state,
+        zipCode: form.zipCode,
       },
-      (error) => {
-        console.log('My error', error);
-      }
-    );
+      language: form.language,
+      gender: form.gender,
+      aboutYou: form.aboutYou,
+      uploadPhoto: form.uploadPhoto,
+      role: form.role,
+      agreetc: form.agreetc,
+    };
+
+    this.adminService.addUser(payload).subscribe({
+      next: () => {
+        this.addEditUserForm.reset();
+        this.getAllUser();
+        $('#addEditUserModal').modal('hide');
+      },
+      error: (err) => console.log('Add Error:', err),
+    });
   }
 
-  editUserPop(user_id: any) {
+  editUserPop(user_id: number) {
     this.edit_user = true;
     this.add_user = false;
     this.popup_header = 'Edit User';
-    this.adminService.getSingleUser(user_id).subscribe(
-      (data) => {
+    this.edit_user_id = user_id;
+
+    this.adminService.getSingleUser(user_id).subscribe({
+      next: (data) => {
         this.single_user_data = data;
-        this.upload_file_name = this.single_user_data.uploadPhoto;
-        this.addEditUserForm.setValue({
-          name: this.single_user_data.name,
-          mobNumber: this.single_user_data.mobNumber,
-          age: this.single_user_data.age,
-          dob: this.single_user_data.dob,
-          email: this.single_user_data.email,
-          password: this.single_user_data.password,
-          address: {
-            id: 0,
-            addressLine1: this.single_user_data.addressLine1,
-            addressLine2: this.single_user_data.addressLine2,
-            city: this.single_user_data.city,
-            state: this.single_user_data.state,
-            zipCode: this.single_user_data.zipCode,
-          },
-          language: this.single_user_data.language,
-          gender: this.single_user_data.gender,
-          aboutYou: this.single_user_data.aboutYou,
+        this.upload_file_name = data.uploadPhoto;
+
+        this.addEditUserForm.patchValue({
+          name: data.name,
+          mobNumber: data.mobNumber,
+          age: data.age,
+          dob: data.dob,
+          email: data.email,
+          password: data.password,
+
+          addressLine1: data.address?.addressLine1,
+          addressLine2: data.address?.addressLine2,
+          city: data.address?.city,
+          state: data.address?.state,
+          zipCode: data.address?.zipCode,
+
+          language: data.language,
+          gender: data.gender,
+          aboutYou: data.aboutYou,
           uploadPhoto: '',
-          role: this.single_user_data.role,
-          agreetc: this.single_user_data.agreetc,
+          role: data.role,
+          agreetc: data.agreetc,
         });
       },
-      (error) => {
-        console.log('My Error', error);
-      }
-    );
+      error: (err) => console.log('Fetch Error:', err),
+    });
   }
 
   updateUser() {
-    this.add_user = true;
-    if (this.addEditUserForm.invalid) {
-      alert('Error 😳\n\n' + JSON.stringify(this.addEditUserForm.value));
-
+    if (this.addEditUserForm.invalid || this.edit_user_id === null) {
+      alert('Invalid form or missing user ID');
       return;
     }
-    this.user_reg_data = this.addEditUserForm.value;
-    this.user_details = {
-      name: this.user_reg_data.name,
-      mobNumber: this.user_reg_data.mobNumber,
-      age: this.user_reg_data.age,
-      dob: this.user_reg_data.dob,
-      email: this.user_reg_data.email,
-      password: this.user_reg_data.password,
-      address: {
-        id: 0,
-        addressLine1: this.user_reg_data.addressLine1,
-        addressLine2: this.user_reg_data.addressLine2,
-        city: this.user_reg_data.city,
-        state: this.user_reg_data.state,
-        zipCode: this.user_reg_data.zipCode,
-      },
-      language: this.user_reg_data.language,
-      gender: this.user_reg_data.gender,
-      aboutYou: this.user_reg_data.aboutYou,
-      uploadPhoto:
-        this.user_reg_data.uploadPhoto == ''
-          ? this.upload_file_name
-          : this.user_reg_data.uploadPhoto,
-      role: this.user_reg_data.role,
-      agreetc: this.user_reg_data.agreetc,
-    };
-    this.adminService.editUser(this.edit_user_id,this.user_details).subscribe(
-      (data) => {
-        this.getAllUser();
-        JQuery('#addEdituserModal').modal('toggle');
 
+    const form = this.addEditUserForm.value;
+
+    const payload = {
+      name: form.name,
+      mobNumber: form.mobNumber,
+      age: form.age,
+      dob: form.dob,
+      email: form.email,
+      password: form.password,
+      address: {
+        addressLine1: form.addressLine1,
+        addressLine2: form.addressLine2,
+        city: form.city,
+        state: form.state,
+        zipCode: form.zipCode,
       },
-      (error) => {
-        console.log('My error', error);
-      }
-    );
+      language: form.language,
+      gender: form.gender,
+      aboutYou: form.aboutYou,
+      uploadPhoto: form.uploadPhoto || this.upload_file_name,
+      role: form.role,
+      agreetc: form.agreetc,
+    };
+
+    this.adminService.editUser(this.edit_user_id, payload).subscribe({
+      next: () => {
+        this.addEditUserForm.reset();
+        this.getAllUser();
+        $('#addEditUserModal').modal('hide');
+      },
+      error: (err) => console.log('Update Error:', err),
+    });
   }
 
-  deleteUser(user_id: any) {
-    this.adminService.deleteUser(user_id).subscribe(
-      (data) => {
-        this.getAllUser();
-      },
-      (error) => {
-        console.log('My Error', error);
-      }
-    );
+  deleteUser(user_id: number) {
+    this.adminService.deleteUser(user_id).subscribe({
+      next: () => this.getAllUser(),
+      error: (err) => console.log('Delete Error:', err),
+    });
   }
 }

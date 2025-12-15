@@ -6,34 +6,40 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminService {
-  public user_url = 'http://localhost:3000/users/';
-  public product_url = 'http://localhost:3000/products/';
-  public all_user_url = 'http://localhost:3000/users';
+
+  private readonly USER_URL = 'http://localhost:3000/users';
+  private readonly PRODUCT_URL = 'http://localhost:3000/products';
 
   constructor(private apiService: ApiService) {}
 
-  userDashBoard() {
-    return this.apiService.get(this.user_url);
+  /* Dashboard */
+  userDashBoard(): Observable<any> {
+    return this.apiService.get(this.USER_URL);
   }
 
-  productDashBoard() {
-    return this.apiService.get(this.product_url);
+  productDashBoard(): Observable<any> {
+    return this.apiService.get(this.PRODUCT_URL);
   }
+
+  /* Users CRUD */
 
   allUsers(): Observable<any> {
-    return this.apiService.get(this.all_user_url);
+    return this.apiService.get(this.USER_URL);
   }
-  addUser(user_data: any) {
-    return this.apiService.post(this.user_url + user_data);
+
+  addUser(userData: any): Observable<any> {
+    return this.apiService.post(this.USER_URL, userData);
   }
-  getSingleUser(user_id: any) {
-    return this.apiService.get(this.user_url + user_id);
+
+  getSingleUser(userId: number): Observable<any> {
+    return this.apiService.get(`${this.USER_URL}/${userId}`);
   }
-  editUser(user_id: any, user_details: any): Observable<any> {
-    return this.apiService.put(this.user_url + user_id, user_details);
+
+  editUser(userId: number, userData: any): Observable<any> {
+    return this.apiService.put(`${this.USER_URL}/${userId}`, userData);
   }
-  deleteUser(user_id:any)
-  {
-    return this.apiService.delete(this.user_url+user_id)
+
+  deleteUser(userId: number): Observable<any> {
+    return this.apiService.delete(`${this.USER_URL}/${userId}`);
   }
 }
