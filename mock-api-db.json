@@ -15,7 +15,9 @@
         "state": "Karnataka",
         "zipCode": "577201"
       },
-      "language": ["English"],
+      "language": [
+        "English"
+      ],
       "gender": "Male",
       "aboutYou": "Software Engineer from Karnataka.",
       "uploadPhoto": "vinay.jpg",
@@ -23,26 +25,28 @@
       "agreetc": true
     },
     {
-      "id": "2",
-      "name": "Pooja",
-      "mobNumber": "9876501234",
+      "aboutYou": "Interested in arts and design and MEAN stack developer",
       "age": 23,
       "dob": "2001-02-20",
       "email": "pooja@example.com",
-      "password": "pooja123",
+      "gender": "Female",
       "address": {
+        "id": 0,
         "addressLine1": "Near Bus Stand",
         "addressLine2": "Temple Street",
         "city": "Udupi",
         "state": "Karnataka",
         "zipCode": "576101"
       },
-      "language": ["Hindi"],
-      "gender": "Female",
-      "aboutYou": "Interested in arts and design.",
-      "uploadPhoto": "pooja.jpg",
+      "language": [
+        "Hindi"
+      ],
+      "mobNumber": "9876501234",
+      "name": "Pooja",
+      "password": "pooja123",
+      "uploadPhoto": "C:\\fakepath\\Screenshot 2024-10-31 122750.png",
       "role": "seller",
-      "agreetc": true
+      "id": "2"
     },
     {
       "id": "3",
@@ -59,7 +63,9 @@
         "state": "Karnataka",
         "zipCode": "560066"
       },
-      "language": ["Kannada"],
+      "language": [
+        "Kannada"
+      ],
       "gender": "Male",
       "aboutYou": "Full stack developer.",
       "uploadPhoto": "yogeesh.jpg",
@@ -81,7 +87,9 @@
         "state": "Karnataka",
         "zipCode": "583101"
       },
-      "language": ["English"],
+      "language": [
+        "English"
+      ],
       "gender": "Male",
       "aboutYou": "Business owner and fitness lover.",
       "uploadPhoto": "pavan.jpg",
@@ -103,7 +111,11 @@
         "state": "Karnataka",
         "zipCode": "560038"
       },
-      "language": ["English", "Hindi", "Telugu"],
+      "language": [
+        "English",
+        "Hindi",
+        "Telugu"
+      ],
       "gender": "Female",
       "aboutYou": "UI/UX designer and creative enthusiast",
       "uploadPhoto": "deepika.png",
@@ -125,7 +137,11 @@
         "state": "Karnataka",
         "zipCode": "560083"
       },
-      "language": ["Kannada", "English", "Hindi"],
+      "language": [
+        "Kannada",
+        "English",
+        "Hindi"
+      ],
       "gender": "Female",
       "aboutYou": "PCB Designer",
       "uploadPhoto": "bhavana.png",
